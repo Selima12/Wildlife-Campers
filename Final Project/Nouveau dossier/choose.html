@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wildlife</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <link rel ="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="ex1" class="modal">
+        <p>Congratulations you are successfully  registered<br>Check your email box .</p>
+        <a href="#" rel="modal:close">Close</a>
+      </div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm fixed-top">
+                <!-- Brand -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="res/campfire.png"  width="30px" height="30px" style="margin-right: 10px">
+                </a>
+              
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                          Home
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="about us.html">
+                              About Us
+                          </a>
+                        </li>
+    
+                  <!-- Dropdown -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      <img src="res/location-pin.png" width="20px" height="20px">
+                        Destinations
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="Bizerte.html">Bizerte</a>
+                      <a class="dropdown-item" href="Tabarka.html">Tabarka</a>
+                      <a class="dropdown-item" href="Ain Drahem.html">Ain Drahem</a>
+                      <a class="dropdown-item" href="Djerba.html">Djerba</a>
+                      <a class="dropdown-item" href="Slimane.html">Slimane</a>
+                      <a class="dropdown-item" href="Tozeur.html">Tozeur</a>
+                      <a class="dropdown-item" href="Klebia.html">Klebia</a>
+
+
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                                  <a class="nav-link" href="Activities.html">
+                                      Activities
+                                  </a>
+                                </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="Participate.html">
+                        
+                        Particiapte
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                        <a class="nav-link" href="Shopping Tools.html">
+                            <img src="res/shopping-cart.png" width="20px" height="20px">
+                            Shopping Tools
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                            <a class="nav-link" href="Top Contributors.html">
+                                <img src="res/gold-medal.png" width="20px" height="20px">
+                                Top Contributors
+                            </a>
+                          </li>
+                </ul>
+            </nav>
+
+
+
+        <div class="f2 nopad">
+            <div class=cc>
+            <br><br><br>
+            <center>
+  <h3>Choose Your Destination</h3>
+   
+  <form action="/action_page.php" method="get">
+  
+      <input type="checkbox" > Bizerte<br>
+      <input type="checkbox" > Tabarka<br>
+      <input type="checkbox" > Ain Drahem<br>
+      <input type="checkbox" > Djerba<br>
+      <input type="checkbox" > Slimane<br>
+      <input type="checkbox" > Kelibia<br>
+      
+    
+  <br><br><br>
+<h3>Choose Your Activities</h3>
+
+  
+      <input type="checkbox" > Tyrolean<br>
+      <input type="checkbox" > Nautical Sports<br>
+      <input type="checkbox" > Bycicles<br>
+      <input type="checkbox" > Yoga<br>
+      <input type="checkbox" > Hiking<br>
+      
+     
+<br><br>
+    <h3> How many campers are you ? </h3>
+    <label for="tentacles"></label> 
+
+<input type="number" id="tentacles" name="tentacles"
+       min="3" max="10"><br><br>
+       
+
+<script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script><br>
+<div class="container">
+  <h3>Pick up the time </h3><br>
+        Start Date: <input id="startDate" type="date"  width="276" />
+        End Date: <input id="endDate" type="date" width="276" />
+    </div>
+    <script>
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+        
+    </script>
+    <br><br>
+    <a  href="#ex1" rel="modal:open" class="three"><Input type="submit" value="Submit"</a>
+</center>
+</form>
+  </div>
+</div><br> <br>
+
+
+
+</body>
+<script src="js/main.js"></script>
+</html>
